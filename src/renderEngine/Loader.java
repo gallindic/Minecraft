@@ -2,10 +2,8 @@ package renderEngine;
 
 import model.Model;
 import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL30;
+import org.lwjgl.opengl.*;
+import org.lwjgl.util.vector.Vector3f;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 
@@ -20,14 +18,38 @@ public class Loader {
     private List<Integer> vbos = new ArrayList<>();
     private List<Integer> vaos = new ArrayList<>();
     private List<Integer> textures = new ArrayList<>();
-    private int vaoAtributesCount = 0;
+
+    public Model loadToVAO(float[] vertices, float[] textureCoords){
+        int vaoID = createAndBindVertexArray();
+
+        storeDataInAttributesList(0, 3, vertices);
+        storeDataInAttributesList(1, 2, textureCoords);
+
+        unbindVertexArray();
+
+        return new Model(vaoID, vertices.length);
+    }
 
     public Model loadToVAO(float[] vertices, int[] indices, float[] textureCoords){
         int vaoID = createAndBindVertexArray();
 
         bindIndicesBuffer(indices);
-        storeDataInAttributesList(vaoAtributesCount++, 3, vertices);
-        storeDataInAttributesList(vaoAtributesCount++, 2, textureCoords);
+        storeDataInAttributesList(0, 3, vertices);
+        storeDataInAttributesList(1, 2, textureCoords);
+
+        unbindVertexArray();
+
+        return new Model(vaoID, indices.length);
+    }
+
+    public Model loadToVAO(float[] vertices, int[] indices, float[] textureCoords, float[] positions){
+        int vaoID = createAndBindVertexArray();
+
+        bindIndicesBuffer(indices);
+        storeDataInAttributesList(0, 3, vertices);
+        storeDataInAttributesList(1, 2, textureCoords);
+        storeDataInAttributesList(2, 3, positions);
+        GL33.glVertexAttribDivisor(2, 1);
 
         unbindVertexArray();
 
@@ -43,6 +65,10 @@ public class Loader {
         try {
             texture = TextureLoader.getTexture("PNG",
                     new FileInputStream("assets/" + fileName + ".png"));
+            GL30.glGenerateMipmap(GL11.GL_TEXTURE_2D);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL14.GL_TEXTURE_LOD_BIAS, -4);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Tried to load texture " + fileName + ".png , didn't work");
@@ -66,16 +92,6 @@ public class Loader {
         for(int texture : textures){
             GL11.glDeleteTextures(texture);
         }
-    }
-
-    public void enableVaoAttributes(){
-        for (int i = 0; i < vaoAtributesCount; i++)
-            GL20.glEnableVertexAttribArray(i);
-    }
-
-    public void disableVaoAttributes(){
-        for (int i = 0; i < vaoAtributesCount; i++)
-            GL20.glDisableVertexAttribArray(i);
     }
 
     private int createAndBindVertexArray(){
