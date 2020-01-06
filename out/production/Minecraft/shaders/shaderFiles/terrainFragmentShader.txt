@@ -1,12 +1,29 @@
 #version 400 core
 
 in vec2 passTexCoords;
+in vec3 surfaceNormal;
+in vec3 lightDirect;
 
 out vec4 outColor;
 
 uniform sampler2D modelTexture;
 
+uniform vec3 lightColor;
+
 void main(){
-    vec4 texColor = texture(modelTexture, passTexCoords);
-    outColor = texColor;
+
+    vec4 ambient = vec4(0.5, 0.5, 0.5, 1.0) * texture(modelTexture, passTexCoords);
+
+    vec3 unitNormal = normalize(surfaceNormal);
+    vec3 unitLightDirection = normalize(-lightDirect);
+
+    float nDot1 = dot(unitNormal, unitLightDirection);
+    float brightness = max(nDot1, 0.0);
+
+    vec4 color = vec4(lightColor, 1.0f);
+
+    vec4 diffuse = brightness * color * texture(modelTexture, passTexCoords);;
+
+
+    outColor = diffuse + ambient;
 }

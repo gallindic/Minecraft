@@ -6,6 +6,7 @@ import chunk.ChunkMesh;
 import chunk.VegetationChunk;
 import engineTester.Minecraft;
 import entity.Camera;
+import entity.Light;
 import entity.Player;
 import model.Model;
 import model.TexturedModel;
@@ -150,7 +151,7 @@ public class Terrain {
             buildVegetationChunk(chunks.get(index));
             createVegetationInstances(vegetationChunks.get(index));
 
-            Model model = loader.loadToVAO(chunks.get(index).getPositions(), chunks.get(index).getUvs());
+            Model model = loader.loadToVAO(chunks.get(index).getPositions(), chunks.get(index).getNormals(), chunks.get(index).getUvs());
             TexturedModel texturedModel = new TexturedModel(model, Minecraft.texture);
             terrainChunks.add(new TerrainChunk(texturedModel, chunks.get(index).getChunk().getOrigin()));
 

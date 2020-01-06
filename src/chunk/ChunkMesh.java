@@ -69,37 +69,37 @@ public class ChunkMesh {
 
             if(!px){
                 for (int j = 0; j < 6; j++) {
-                    vertices.add(new Vertex(new Vector3f(CubeModel.PX_POS[j].x + blockI.getOrigin().x, CubeModel.PX_POS[j].y + blockI.getOrigin().y, CubeModel.PX_POS[j].z + blockI.getOrigin().z), CubeModel.NORMALS[j], CubeModel.UV_PX[(blockI.getType() * 6) + j]));
+                    vertices.add(new Vertex(new Vector3f(CubeModel.PX_POS[j].x + blockI.getOrigin().x, CubeModel.PX_POS[j].y + blockI.getOrigin().y, CubeModel.PX_POS[j].z + blockI.getOrigin().z), new Vector3f(1, 0, 0), CubeModel.UV_PX[(blockI.getType() * 6) + j]));
                 }
             }
 
             if(!py){
                 for (int j = 0; j < 6; j++) {
-                    vertices.add(new Vertex(new Vector3f(CubeModel.PY_POS[j].x + blockI.getOrigin().x, CubeModel.PY_POS[j].y + blockI.getOrigin().y, CubeModel.PY_POS[j].z + blockI.getOrigin().z), CubeModel.NORMALS[j], CubeModel.UV_PY[(blockI.getType() * 6) + j]));
+                    vertices.add(new Vertex(new Vector3f(CubeModel.PY_POS[j].x + blockI.getOrigin().x, CubeModel.PY_POS[j].y + blockI.getOrigin().y, CubeModel.PY_POS[j].z + blockI.getOrigin().z), new Vector3f(0, 1, 0), CubeModel.UV_PY[(blockI.getType() * 6) + j]));
                 }
             }
 
             if(!nx){
                 for (int j = 0; j < 6; j++) {
-                    vertices.add(new Vertex(new Vector3f(CubeModel.NX_POS[j].x + blockI.getOrigin().x, CubeModel.NX_POS[j].y + blockI.getOrigin().y, CubeModel.NX_POS[j].z + blockI.getOrigin().z), CubeModel.NORMALS[j], CubeModel.UV_NX[(blockI.getType() * 6) + j]));
+                    vertices.add(new Vertex(new Vector3f(CubeModel.NX_POS[j].x + blockI.getOrigin().x, CubeModel.NX_POS[j].y + blockI.getOrigin().y, CubeModel.NX_POS[j].z + blockI.getOrigin().z), new Vector3f(-1, 0, 0), CubeModel.UV_NX[(blockI.getType() * 6) + j]));
                 }
             }
 
             if(!ny){
                 for (int j = 0; j < 6; j++) {
-                    vertices.add(new Vertex(new Vector3f(CubeModel.NY_POS[j].x + blockI.getOrigin().x, CubeModel.NY_POS[j].y + blockI.getOrigin().y, CubeModel.NY_POS[j].z + blockI.getOrigin().z), CubeModel.NORMALS[j], CubeModel.UV_NY[(blockI.getType() * 6) + j]));
+                    vertices.add(new Vertex(new Vector3f(CubeModel.NY_POS[j].x + blockI.getOrigin().x, CubeModel.NY_POS[j].y + blockI.getOrigin().y, CubeModel.NY_POS[j].z + blockI.getOrigin().z), new Vector3f(0, -1, 0), CubeModel.UV_NY[(blockI.getType() * 6) + j]));
                 }
             }
 
             if(!pz){
                 for (int j = 0; j < 6; j++) {
-                    vertices.add(new Vertex(new Vector3f(CubeModel.PZ_POS[j].x + blockI.getOrigin().x, CubeModel.PZ_POS[j].y + blockI.getOrigin().y, CubeModel.PZ_POS[j].z + blockI.getOrigin().z), CubeModel.NORMALS[j], CubeModel.UV_PZ[(blockI.getType() * 6) + j]));
+                    vertices.add(new Vertex(new Vector3f(CubeModel.PZ_POS[j].x + blockI.getOrigin().x, CubeModel.PZ_POS[j].y + blockI.getOrigin().y, CubeModel.PZ_POS[j].z + blockI.getOrigin().z), new Vector3f(0, 0, 1), CubeModel.UV_PZ[(blockI.getType() * 6) + j]));
                 }
             }
 
             if(!nz){
                 for (int j = 0; j < 6; j++) {
-                    vertices.add(new Vertex(new Vector3f(CubeModel.NZ_POS[j].x + blockI.getOrigin().x, CubeModel.NZ_POS[j].y + blockI.getOrigin().y, CubeModel.NZ_POS[j].z + blockI.getOrigin().z), CubeModel.NORMALS[j], CubeModel.UV_NZ[(blockI.getType() * 6) + j]));
+                    vertices.add(new Vertex(new Vector3f(CubeModel.NZ_POS[j].x + blockI.getOrigin().x, CubeModel.NZ_POS[j].y + blockI.getOrigin().y, CubeModel.NZ_POS[j].z + blockI.getOrigin().z), new Vector3f(0, 0, -1), CubeModel.UV_NZ[(blockI.getType() * 6) + j]));
                 }
             }
         }

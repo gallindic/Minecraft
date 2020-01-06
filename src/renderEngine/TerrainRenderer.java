@@ -2,11 +2,14 @@ package renderEngine;
 
 import chunk.ChunkMesh;
 import entity.Camera;
+import entity.DirectionalLight;
 import entity.Entity;
+import entity.Light;
 import model.Model;
 import model.TexturedModel;
 import org.lwjgl.opengl.*;
 import org.lwjgl.util.vector.Matrix4f;
+import org.lwjgl.util.vector.Vector3f;
 import org.w3c.dom.Text;
 import shaders.Shader;
 import shaders.TerrainShader;
@@ -27,9 +30,11 @@ public class TerrainRenderer {
         shader.stopProgram();
     }
 
-    public void render(Map<TexturedModel, List<TerrainChunk>> terrainBlocks, Camera camera){
+    public void render(Map<TexturedModel, List<TerrainChunk>> terrainBlocks, Camera camera, DirectionalLight light){
         this.shader.startProgram();
+        shader.loadLight(light);
         shader.loadViewMatrix(camera);
+
 
         for (TexturedModel model : terrainBlocks.keySet()){
             prepareTexturedModel(model);
@@ -52,6 +57,7 @@ public class TerrainRenderer {
         GL30.glBindVertexArray(rawModel.getVaoID());
         GL20.glEnableVertexAttribArray(0);
         GL20.glEnableVertexAttribArray(1);
+        GL20.glEnableVertexAttribArray(2);
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getModelTexture().getTextureID());
     }
@@ -59,6 +65,7 @@ public class TerrainRenderer {
     private void unbindTexturedModel() {
         GL20.glDisableVertexAttribArray(0);
         GL20.glDisableVertexAttribArray(1);
+        GL20.glDisableVertexAttribArray(2);
         GL30.glBindVertexArray(0);
     }
 

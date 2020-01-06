@@ -30,6 +30,18 @@ public class Loader {
         return new Model(vaoID, vertices.length);
     }
 
+    public Model loadToVAO(float[] vertices, float[] normals, float[] textureCoords){
+        int vaoID = createAndBindVertexArray();
+
+        storeDataInAttributesList(0, 3, vertices);
+        storeDataInAttributesList(1, 2, textureCoords);
+        storeDataInAttributesList(2, 3, normals);
+
+        unbindVertexArray();
+
+        return new Model(vaoID, vertices.length);
+    }
+
     public Model loadToVAO(float[] vertices, int[] indices, float[] textureCoords){
         int vaoID = createAndBindVertexArray();
 

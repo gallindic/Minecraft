@@ -3,21 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="b14fdcf9-bcc9-45b4-8319-ed5d9105d373" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/grassblock.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Minecraft/engineTester/Minecraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/engineTester/Minecraft.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Minecraft/entity/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/entity/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/DisplayManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/model/OBJLoader.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/Loader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/Renderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/vertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chunk/ChunkMesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chunk/ChunkMesh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTester/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/Minecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OBJLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objLoader/OBJLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/shaderFiles/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/shaderFiles/fragmentShader.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shaders/shaderFiles/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/shaderFiles/vertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/TerrainShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/TerrainShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/shaderFiles/terrainFragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/shaderFiles/terrainFragmentShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shaders/shaderFiles/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/shaderFiles/terrainVertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/terrain/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/terrain/Terrain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,27 +51,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/models" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/src/shaders/shaderFiles" />
-      <recent name="$PROJECT_DIR$/libs" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="shaders" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/textures" />
       <recent name="$PROJECT_DIR$/assets/models" />
       <recent name="$PROJECT_DIR$/src/model" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/src/entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="shaders" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/models" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/src/shaders/shaderFiles" />
+      <recent name="$PROJECT_DIR$/libs" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Minecraft">
@@ -152,15 +153,15 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="617" y="358" width="676" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576508134611">
+    <state x="617" y="358" width="676" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578312171138">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="617" y="358" width="676" height="397" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1576508134611" />
-    <state x="576" y="215" width="332" height="499" key="#com.intellij.ide.util.MemberChooser" timestamp="1578137960093">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="617" y="358" width="676" height="397" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1578312171138" />
+    <state x="768" y="257" width="332" height="499" key="#com.intellij.ide.util.MemberChooser" timestamp="1578345563682">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="576" y="215" width="332" height="499" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1578137960093" />
-    <state x="768" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1576589943666" />
+    <state x="768" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1578345563682" />
     <state x="486" y="353" width="467" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578137941409">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -182,46 +183,46 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="582" y="300" width="735" height="520" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1576537443513" />
-    <state width="1398" height="285" key="GridCell.Tab.0.bottom" timestamp="1578257868259">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1578349760916">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1578257868259" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576595252250" />
-    <state width="1398" height="285" key="GridCell.Tab.0.center" timestamp="1578257868258">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1578349760916">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1578257868258" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576595252250" />
-    <state width="1398" height="285" key="GridCell.Tab.0.left" timestamp="1578257868258">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1578349760916">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1578257868258" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576595252249" />
-    <state width="1398" height="285" key="GridCell.Tab.0.right" timestamp="1578257868259">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1578349760916">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1578257868259" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576595252250" />
-    <state width="1398" height="285" key="GridCell.Tab.1.bottom" timestamp="1578257868260">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
+    <state width="1874" height="275" key="GridCell.Tab.1.bottom" timestamp="1578318610641">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1578257868260" />
-    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576591038109" />
-    <state width="1398" height="285" key="GridCell.Tab.1.center" timestamp="1578257868260">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610641" />
+    <state width="1874" height="275" key="GridCell.Tab.1.center" timestamp="1578318610640">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1578257868260" />
-    <state width="1874" height="340" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576591038108" />
-    <state width="1398" height="285" key="GridCell.Tab.1.left" timestamp="1578257868259">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610640" />
+    <state width="1874" height="275" key="GridCell.Tab.1.left" timestamp="1578318610640">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1578257868259" />
-    <state width="1874" height="340" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576591038108" />
-    <state width="1398" height="285" key="GridCell.Tab.1.right" timestamp="1578257868260">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1874" height="275" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610640" />
+    <state width="1874" height="275" key="GridCell.Tab.1.right" timestamp="1578318610640">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1578257868260" />
-    <state width="1874" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576591038109" />
+    <state width="1874" height="275" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610640" />
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1576537445371">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

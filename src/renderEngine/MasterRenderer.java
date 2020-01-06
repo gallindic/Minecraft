@@ -1,7 +1,9 @@
 package renderEngine;
 
 import entity.Camera;
+import entity.DirectionalLight;
 import entity.Entity;
+import entity.Light;
 import model.TexturedModel;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
@@ -53,10 +55,10 @@ public class MasterRenderer {
         GL11.glClearColor(0.53f, 0.81f, 0.92f, 1.0f);
     }
 
-    public void render(Camera camera){
+    public void render(Camera camera, DirectionalLight light){
         prepareScreen();
 
-        terrainRenderer.render(terrainChunks, camera);
+        terrainRenderer.render(terrainChunks, camera, light);
         vegetationRenderer.render(vegetations, camera);
         entityRenderer.render(entities, camera);
 

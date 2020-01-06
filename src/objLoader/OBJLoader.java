@@ -1,4 +1,4 @@
-package model;
+package objLoader;
 
 import model.Model;
 import org.lwjgl.util.vector.Vector2f;

@@ -1,6 +1,8 @@
 package shaders;
 
 import entity.Camera;
+import entity.DirectionalLight;
+import entity.Light;
 import org.lwjgl.util.vector.Matrix4f;
 import utils.Maths;
 
@@ -13,6 +15,9 @@ public class TerrainShader extends ShaderProgram {
     private int location_projectionMatrix;
     private int location_viewMatrix;
 
+    private int location_lightPosition;
+    private int location_lightColor;
+
     public TerrainShader() {
         super(vertexFile, fragmentFile);
     }
@@ -22,6 +27,8 @@ public class TerrainShader extends ShaderProgram {
         location_transformationMatrix = super.getUniformLocation("transformationMatrix");
         location_projectionMatrix = super.getUniformLocation("projectionMatrix");
         location_viewMatrix = super.getUniformLocation("viewMatrix");
+        location_lightPosition = super.getUniformLocation("lightDirection");
+        location_lightColor = super.getUniformLocation("lightColor");
     }
 
     public void loadTransformationMatrix(Matrix4f matrix){
@@ -30,6 +37,11 @@ public class TerrainShader extends ShaderProgram {
 
     public void loadProjectionMatrix(Matrix4f matrix){
         super.loadMatrix(location_projectionMatrix, matrix);
+    }
+
+    public void loadLight(DirectionalLight light){
+        super.loadVector(location_lightPosition, light.getDirection());
+        super.loadVector(location_lightColor, light.getColor());
     }
 
     public void loadViewMatrix(Camera camera){
