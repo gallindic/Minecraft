@@ -63,6 +63,7 @@ public class DisplayManager {
     public static void updateDisplay(){
 
         updateFPS();
+        Display.sync(FPS_CAP);
         Display.update();
         long currentFrameTime = getCurrentTime();
         delta = (currentFrameTime - lastFrameTime)/1000f;

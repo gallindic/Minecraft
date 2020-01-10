@@ -9,13 +9,16 @@ uniform mat4 projectionMatrix;
 uniform mat4 viewMatrix;
 
 uniform vec3 lightDirection;
+uniform mat4 toShadowMapSpace;
 
 out vec2 passTexCoords;
 out vec3 surfaceNormal;
 out vec3 lightDirect;
+out vec4 shadowCoords;
 
 void main(){
     vec4 worldPosition = transformationMatrix * vec4(vertices, 1.0f);
+    shadowCoords = toShadowMapSpace * worldPosition;
 
     gl_Position = projectionMatrix * viewMatrix * worldPosition;
     passTexCoords = texCoords;

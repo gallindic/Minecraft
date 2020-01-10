@@ -5,7 +5,8 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.Vector3f;
 
 public class Camera {
-    private float distanceFromPlayer = 6;
+    private float horizontalDistanceFromPlayer = 5;
+    private float verticalDistanceFromPlayer = 7;
     private boolean personState1st;
     public static Vector3f camPos;
 
@@ -43,10 +44,9 @@ public class Camera {
         float mouseSensitivity = 0.25f;
         updateYaw(dx * mouseSensitivity);
 
-        if(personState1st) {
-            float dy = -Mouse.getDY();
-            updatePitch(dy * mouseSensitivity);
-        }
+        float dy = -Mouse.getDY();
+        updatePitch(dy * mouseSensitivity);
+
 
     }
 
@@ -56,10 +56,14 @@ public class Camera {
 
         //3rd Person
         if(Keyboard.isKeyDown(Keyboard.KEY_5) && personState1st) {
+            horizontalDistanceFromPlayer = 6;
+            verticalDistanceFromPlayer = 6;
             personState1st = false;
         }
         //1st Person
         else if(Keyboard.isKeyDown(Keyboard.KEY_4) && !personState1st){
+            horizontalDistanceFromPlayer = -1;
+            verticalDistanceFromPlayer = 2;
             personState1st = true;
         }
     }
@@ -100,10 +104,10 @@ public class Camera {
     }
 
     private float calculateHorizontalDistance(){
-        return (float) (distanceFromPlayer* Math.cos(Math.toRadians(pitch)));
+        return (float) (horizontalDistanceFromPlayer* Math.cos(Math.toRadians(pitch)));
     }
 
     private float calculateVerticalDistance(){
-        return (float) (distanceFromPlayer* Math.sin(Math.toRadians(pitch)));
+        return (float) (verticalDistanceFromPlayer* Math.sin(Math.toRadians(pitch)));
     }
 }

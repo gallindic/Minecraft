@@ -26,11 +26,12 @@ public class TerrainRenderer {
     public TerrainRenderer(TerrainShader shader, Matrix4f projectionMatrix) {
         this.shader = shader;
         shader.startProgram();
+        shader.loadShadowMap(1);
         shader.loadProjectionMatrix(projectionMatrix);
         shader.stopProgram();
     }
 
-    public void render(Map<TexturedModel, List<TerrainChunk>> terrainBlocks, Camera camera, DirectionalLight light){
+    public void render(Map<TexturedModel, List<TerrainChunk>> terrainBlocks, Camera camera, DirectionalLight light, Matrix4f toShadowSpace){
         this.shader.startProgram();
         shader.loadLight(light);
         shader.loadViewMatrix(camera);

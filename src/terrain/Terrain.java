@@ -1,5 +1,6 @@
 package terrain;
 
+import Collision.BlockAABB;
 import block.Block;
 import chunk.Chunk;
 import chunk.ChunkMesh;
@@ -41,6 +42,7 @@ public class Terrain {
     static List<VegetationMesh> vegetationMeshes = new ArrayList<>();
 
     static Map<String, Float> heights = Collections.synchronizedMap(new HashMap<>());
+    public static List<BlockAABB> blockAABBList = Collections.synchronizedList(new ArrayList<>());
 
     public Terrain(MasterRenderer renderer, Loader loader, Player player) {
         this.perlinNoiseGenerator = new PerlinNoiseGenerator();
@@ -89,7 +91,7 @@ public class Terrain {
                             }
 
                             blocks.add(new Block(position, blockType));
-                            addHeightToMap(position);
+                            blockAABBList.add(new BlockAABB(new Vector3f(x * 32 + i, y - 1, z * 32 + j), new Block(position, blockType)));
 
                             if(Math.random() > 0.99 && trees < terrainChunkLimit && blockType == Block.GRASS){
                                 treeBlocks(blocks, position);

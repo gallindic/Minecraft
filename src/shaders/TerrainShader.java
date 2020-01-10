@@ -17,6 +17,8 @@ public class TerrainShader extends ShaderProgram {
 
     private int location_lightPosition;
     private int location_lightColor;
+    private int location_toShadowMapSpace;
+    private int location_shadowMap;
 
     public TerrainShader() {
         super(vertexFile, fragmentFile);
@@ -29,6 +31,8 @@ public class TerrainShader extends ShaderProgram {
         location_viewMatrix = super.getUniformLocation("viewMatrix");
         location_lightPosition = super.getUniformLocation("lightDirection");
         location_lightColor = super.getUniformLocation("lightColor");
+        location_toShadowMapSpace = super.getUniformLocation("toShadowMapSpace");
+        location_shadowMap = super.getUniformLocation("shadowMap");
     }
 
     public void loadTransformationMatrix(Matrix4f matrix){
@@ -47,6 +51,14 @@ public class TerrainShader extends ShaderProgram {
     public void loadViewMatrix(Camera camera){
         Matrix4f viewMatrix = Maths.createViewMatrix(camera);
         super.loadMatrix(location_viewMatrix, viewMatrix);
+    }
+
+    public void loadToShadowSpaceMatrix(Matrix4f matrix){
+        super.loadMatrix(location_toShadowMapSpace, matrix);
+    }
+
+    public void loadShadowMap(int i){
+        super.loadInt(location_shadowMap, i);
     }
 }
 

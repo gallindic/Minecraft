@@ -1,5 +1,6 @@
 package engineTester;
 
+import Inventory.Inventory;
 import entity.Camera;
 import entity.DirectionalLight;
 import entity.Light;
@@ -28,18 +29,19 @@ public class Minecraft {
 
         texture = new ModelTexture(new Loader().loadTexture("textures/DefaultPack"));
 
-        ModelData modelData = OBJFileLoader.loadOBJ("models/steve");
+        ModelData modelData = OBJFileLoader.loadOBJ("models/person2");
         Model model = loader.loadToVAO(modelData.getVertices(), modelData.getIndices(), modelData.getTextureCoords());
-        TexturedModel steve = new TexturedModel(model, new ModelTexture(loader.loadTexture("textures/steveTexture")));
+        TexturedModel steve = new TexturedModel(model, new ModelTexture(loader.loadTexture("textures/playerTexture")));
 
         Player player = new Player(steve, new Vector3f(),0,0,0,1);
         Camera camera = new Camera(new Vector3f(), player);
-        DirectionalLight light = new DirectionalLight(new Vector3f(1, 1, 1), new Vector3f(-1, -1, -1), 40);
-        MasterRenderer renderer = new MasterRenderer();
+        DirectionalLight light = new DirectionalLight(new Vector3f(1, 1, 1), new Vector3f(-1, -1, -1));
+        MasterRenderer renderer = new MasterRenderer(camera);
 
         Terrain terrain = new Terrain(renderer, loader, player);
         terrain.buildTerrain();
         terrain.addNewChunks();
+        player.collision();
 
         while(!Display.isCloseRequested()){
             camera.move();

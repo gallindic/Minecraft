@@ -1,14 +1,17 @@
 package entity;
 
+import Collision.CollisionDetector;
+import Collision.PlayerAABB;
 import model.TexturedModel;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
 import renderEngine.DisplayManager;
 import terrain.Terrain;
 
 public class Player extends Entity {
 
-    private static final float RUN_SPEED = 20;
+    private static final float RUN_SPEED = 15;
     private static final float TURN_SPEED = 160;
     private static final float GRAVITY = -50;
     private static final float JUMP_POWER = 15;
@@ -21,12 +24,20 @@ public class Player extends Entity {
 
     private boolean isInAir = false;
 
+    public static Vector3f currentPlayerPosition;
+
+    private static PlayerAABB playerAABB;
+
     public Player(TexturedModel texturedModel, Vector3f position, float rotX, float rotY, float rotZ, float scale) {
         super(texturedModel, position, rotX, rotY, rotZ, scale);
+
+        currentPlayerPosition = super.getPosition();
+        playerAABB = new PlayerAABB(super.getPosition(), this);
     }
 
     public void setPlayerOrigin(Vector3f origin){
         super.setPosition(origin);
+        playerAABB.setWorldPosition(origin);
         setTerrainHeight(origin.y);
     }
 
@@ -34,19 +45,19 @@ public class Player extends Entity {
         TERRAIN_HEIGHT = height;
     }
 
-    private void collisionDetection(){
-
+    public void collision(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (!Display.isCloseRequested()) {
+                    CollisionDetector.checkCollision(playerAABB, Terrain.blockAABBList);
+                }
+            }
+        }).start();
     }
 
     public void logic(){
-        //float y = Terrain.getCurrentPositionHeight((int) this.getPosition().x, (int) this.getPosition().z);
-        //if(y != -100)
-         //   setTerrainHeight(y);
-
-        //setTerrainHeight();
         move();
-
-        //System.out.println(Terrain.getCurrentPositionHeight(this.getPosition().x, this.getPosition().z) + ", y coord");
     }
 
     private void move(){
@@ -55,6 +66,8 @@ public class Player extends Entity {
         float dx = (float) (distance * Math.sin(Math.toRadians(super.getRotY())));
         float dz = (float) (distance * Math.cos(Math.toRadians(super.getRotY())));
         super.increasePosition(dx, 0, dz);
+        currentPlayerPosition = super.getPosition();
+        playerAABB.setWorldPosition(super.getPosition());
 
         upwardsSpeed += GRAVITY * DisplayManager.getFrameTimeSeconds();
         super.increasePosition(0, upwardsSpeed*DisplayManager.getFrameTimeSeconds(),0);
@@ -66,7 +79,7 @@ public class Player extends Entity {
     }
 
 
-    private void jump(){
+    public void jump(){
         if(!isInAir){
             this.upwardsSpeed = JUMP_POWER;
             isInAir = true;

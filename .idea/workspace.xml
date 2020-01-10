@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Minecraft:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b14fdcf9-bcc9-45b4-8319-ed5d9105d373" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/models/picda.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/models/stall.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/textures/stallTexture.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Minecraft/engineTester/Minecraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/engineTester/Minecraft.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Minecraft/entity/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/entity/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/model/OBJLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/Loader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chunk/ChunkMesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chunk/ChunkMesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/entity/DirectionalLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/entity/DirectionalLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/MasterRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/MasterRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/TerrainRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/renderEngine/TerrainRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/shaders/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/shaders/ShaderProgram.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/shaders/TerrainShader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/shaders/TerrainShader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/terrainFragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/terrainFragmentShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/terrainVertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/shaders/shaderFiles/terrainVertexShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/terrain/Terrain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/terrain/Terrain$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minecraft/terrain/Terrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minecraft/terrain/Terrain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engineTester/Minecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engineTester/Minecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OBJLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objLoader/OBJLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderEngine/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/DirectionalLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/DisplayManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/MasterRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderEngine/TerrainRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shaders/ShaderProgram.java" afterDir="false" />
@@ -47,32 +65,37 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="minecraft" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/models" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Program" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/textures" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shadows" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/assets/models" />
-      <recent name="$PROJECT_DIR$/src/model" />
       <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/src/entity" />
+      <recent name="$PROJECT_DIR$/src/shaders/shaderFiles" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="shaders" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/models" />
-      <recent name="$PROJECT_DIR$/assets" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/shaders/shaderFiles" />
-      <recent name="$PROJECT_DIR$/libs" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets/textures" />
+      <recent name="$PROJECT_DIR$/assets/models" />
+      <recent name="$PROJECT_DIR$/src/model" />
+      <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Minecraft">
@@ -146,6 +169,12 @@
       <workItem from="1578053270872" duration="1666000" />
       <workItem from="1578055695662" duration="1049000" />
       <workItem from="1578056881122" duration="65234000" />
+      <workItem from="1578382486792" duration="4455000" />
+      <workItem from="1578388160197" duration="28000" />
+      <workItem from="1578571141839" duration="5444000" />
+      <workItem from="1578580729003" duration="38000" />
+      <workItem from="1578580865027" duration="6103000" />
+      <workItem from="1578589075991" duration="6463000" />
     </task>
     <servers />
   </component>
@@ -153,15 +182,23 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="555" y="215" width="800" height="684" key="#Project_Structure" timestamp="1578598279037">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="215" width="800" height="684" key="#Project_Structure/0.27.1920.1053@0.27.1920.1053" timestamp="1578598279037" />
     <state x="617" y="358" width="676" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578312171138">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="617" y="358" width="676" height="397" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1578312171138" />
-    <state x="768" y="257" width="332" height="499" key="#com.intellij.ide.util.MemberChooser" timestamp="1578345563682">
+    <state x="768" y="257" width="332" height="499" key="#com.intellij.ide.util.MemberChooser" timestamp="1578583620077">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="576" y="215" width="332" height="499" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1578137960093" />
-    <state x="768" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1578345563682" />
+    <state x="768" y="257" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1578583620077" />
+    <state x="683" y="347" width="525" height="435" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578598327475">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="683" y="347" width="525" height="435" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1578598327475" />
     <state x="486" y="353" width="467" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578137941409">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -179,130 +216,76 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1578155220526" />
-    <state x="582" y="300" width="735" height="520" key="FileChooserDialogImpl" timestamp="1576537443513">
+    <state x="690" y="288" width="530" height="538" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1578598072263">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="582" y="300" width="735" height="520" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1576537443513" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1578349760916">
+    <state x="690" y="288" width="530" height="538" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1920.1053@0.27.1920.1053" timestamp="1578598072263" />
+    <state x="582" y="300" width="735" height="520" key="FileChooserDialogImpl" timestamp="1578598332946">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="582" y="300" width="735" height="520" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1578598332946" />
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1578601060291">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1578257868259" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1578349760916">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578601060291" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1578601060291">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1578257868258" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1578349760916">
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578601060291" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1578601060291">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1578257868258" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1578349760916">
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578601060291" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1578601060291">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1578257868259" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578349760916" />
-    <state width="1874" height="275" key="GridCell.Tab.1.bottom" timestamp="1578318610641">
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578601060291" />
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1578590238173">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1578257868260" />
-    <state width="1874" height="275" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610641" />
-    <state width="1874" height="275" key="GridCell.Tab.1.center" timestamp="1578318610640">
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578590238173" />
+    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1578590238173">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1578257868260" />
-    <state width="1874" height="275" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610640" />
-    <state width="1874" height="275" key="GridCell.Tab.1.left" timestamp="1578318610640">
+    <state width="1874" height="340" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578590238173" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1578590238173">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1578257868259" />
-    <state width="1874" height="275" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610640" />
-    <state width="1874" height="275" key="GridCell.Tab.1.right" timestamp="1578318610640">
+    <state width="1874" height="340" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578590238173" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1578590238173">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1398" height="285" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1578257868260" />
-    <state width="1874" height="275" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578318610640" />
-    <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1576537445371">
+    <state width="1874" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578590238173" />
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor" timestamp="1578598350174">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576537445371" />
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1578598350174" />
+    <state x="705" y="182" width="500" height="750" key="refactoring.ChangeSignatureDialog" timestamp="1578383389436">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="705" y="182" width="500" height="750" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1578383389436" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1578057126169">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1578057126169" />
   </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Minecraft</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>libs</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/entity/Player.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
