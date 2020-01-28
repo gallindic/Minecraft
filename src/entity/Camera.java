@@ -36,7 +36,6 @@ public class Camera {
         float verticalDistance = calculateVerticalDistance();
         calculateCameraPosition(horizontalDistance,verticalDistance);
         this.yaw = (int) (180 - (player.getRotY()));
-
     }
 
     private void cameraRotation(){
@@ -63,7 +62,7 @@ public class Camera {
         //1st Person
         else if(Keyboard.isKeyDown(Keyboard.KEY_4) && !personState1st){
             horizontalDistanceFromPlayer = -1;
-            verticalDistanceFromPlayer = 2;
+            verticalDistanceFromPlayer = 5;
             personState1st = true;
         }
     }

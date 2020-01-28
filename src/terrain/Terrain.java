@@ -6,10 +6,9 @@ import chunk.Chunk;
 import chunk.ChunkMesh;
 import chunk.VegetationChunk;
 import engineTester.Minecraft;
-import entity.Camera;
-import entity.Light;
-import entity.Player;
+import entity.*;
 import model.Model;
+import model.ModelTexture;
 import model.TexturedModel;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector3f;
@@ -24,30 +23,28 @@ public class Terrain {
     public static final int WORLD_SIZE = 5 * 32;
 
     public static int index = 0;
-    private static int vegetationIndex = 0;
 
     private PerlinNoiseGenerator perlinNoiseGenerator;
     private Player player;
     private MasterRenderer renderer;
     private Loader loader;
-    private Random random = new Random();
+    private Zombie zombie;
 
 
     static List<Vector3f> used = Collections.synchronizedList(new ArrayList<>());
-    static List<Vector3f> usedTreePositions = new ArrayList<>();
     static List<TerrainChunk> terrainChunks = new ArrayList<>();
     static List<ChunkMesh> chunks = Collections.synchronizedList(new ArrayList<>());
 
     static List<VegetationChunk> vegetationChunks = new ArrayList<>();
     static List<VegetationMesh> vegetationMeshes = new ArrayList<>();
 
-    static Map<String, Float> heights = Collections.synchronizedMap(new HashMap<>());
     public static List<BlockAABB> blockAABBList = Collections.synchronizedList(new ArrayList<>());
 
-    public Terrain(MasterRenderer renderer, Loader loader, Player player) {
+    public Terrain(MasterRenderer renderer, Loader loader, Player player, Zombie zombie) {
         this.perlinNoiseGenerator = new PerlinNoiseGenerator();
         this.renderer = renderer;
         this.player = player;
+        this.zombie = zombie;
         this.loader = loader;
     }
 
@@ -80,6 +77,7 @@ public class Terrain {
                     List<Block> blocks = new ArrayList<>();
                     int terrainChunkLimit = 3;
                     int trees = 0;
+
                     for (int i = 0; i < 32; i++) {
                         for (int j = 0; j < 32; j++) {
                             int y = (int) perlinNoiseGenerator.generateHeight(i + (x * 32), j + (z * 32)) + 20;
@@ -95,6 +93,11 @@ public class Terrain {
 
                             if(Math.random() > 0.99 && trees < terrainChunkLimit && blockType == Block.GRASS){
                                 treeBlocks(blocks, position);
+
+                                for (int k = 1; k < 5; k++) {
+                                    blockAABBList.add(new BlockAABB(new Vector3f(x * 32 + i, y - 1 + k, z * 32 + j), new Block(position, Block.TREEBARK)));
+                                }
+
                                 trees++;
                             }
                         }
@@ -112,16 +115,27 @@ public class Terrain {
 
     public void buildTerrain(){
         generateTerrain();
-        setCameraOrigin();
+        setOrigins();
     }
 
-    private void setCameraOrigin(){
+    private void setOrigins(){
         for (int i = 0; i < chunks.get(55).getChunk().getBlocks().size(); i++) {
             Block block = chunks.get(55).getChunk().getBlocks().get(i);
             if(block.getOrigin().x == 0.0f && block.getOrigin().z == 0.0f) {
                 Vector3f pos = block.getOrigin();
                 pos.y += 0.5;
                 player.setPlayerOrigin(pos);
+                break;
+            }
+        }
+
+        for (int i = 0; i < chunks.get(55).getChunk().getBlocks().size(); i++) {
+            Block block = chunks.get(55).getChunk().getBlocks().get(i);
+
+            if(Math.floor(block.getOrigin().x) == 0f && Math.floor(block.getOrigin().z) == 15f) {
+                Vector3f pos = block.getOrigin();
+                pos.y += 0.5;
+                zombie.setOrigin(pos);
                 break;
             }
         }
@@ -195,24 +209,11 @@ public class Terrain {
         vegetationMeshes.add(new VegetationMesh(texturedModel, vegetationChunk.getOrigin(), instanceCount));
     }
 
-    public static float getCurrentPositionHeight(float x, float z){
-        for (String position : heights.keySet()){
-            if(position.equals((x + " " + z)))
-                return heights.get(position);
-        }
-
-        return -100;
-    }
-
-    private void addHeightToMap(Vector3f position){
-        heights.put(position.x + " " + position.z, position.y + 0.5f);
-    }
-
     public void addNewChunks(){
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(!Display.isCloseRequested()){
+                while(!Display.isCloseRequested() && !Minecraft.endGame){
                     generateTerrain();
                 }
             }
